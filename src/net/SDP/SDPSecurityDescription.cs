@@ -379,6 +379,8 @@ namespace SIPSorcery.Net
                         Array.Copy(keysalt, 256 / 8, salt, 0, 112 / 8);
                         break;
                     case CryptoSuites.AEAD_AES_256_GCM:
+                        salt = new byte[96 / 8];
+                        Array.Copy(keysalt, 256 / 8, salt, 0, 96 / 8);
                     case CryptoSuites.AEAD_AES_128_GCM:
                         salt = new byte[96 / 8];
                         Array.Copy(keysalt, 128 / 8, salt, 0, 96 / 8);
